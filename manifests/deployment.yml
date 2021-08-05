@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "logitrainaks-2f73"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "logitrainaks-2f73"
+  template:
+    metadata:
+      labels:
+        app: "logitrainaks-2f73"
+    spec:
+      containers:
+        - name: "logitrainaks-2f73"
+          image: "logitrainregistry.azurecr.io/logitrainaks"
+          ports:
+          - containerPort: 80
